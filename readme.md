@@ -1,4 +1,4 @@
-# MOZCORRA TXAPELA
+## MOZCORRA TXAPELA
 
 # Project information
     MVP > a small software from a basc country resteurant. It will have two pages, one with all the menu and there prices, another with the Next Beer. 
