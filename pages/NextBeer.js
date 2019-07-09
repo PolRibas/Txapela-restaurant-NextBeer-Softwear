@@ -9,12 +9,11 @@ function NextBeerPage(parentElement) {
 }
 
 NextBeerPage.prototype.generate = async function() {
-    //this.loading = new Loading(this.parentElement)
-    //this.loading.generate();
+    this.loading = new Loading(this.parentElement)
+    this.loading.generate();
     var random = Math.floor(Math.random() * 24);
     await this.connectToAPI();
     this.selectBeer = this.beers[random];
-    console.log(this.selectBeer)
     this.elements = `
     <header>
         <h2>${this.selectBeer.name}</h2>

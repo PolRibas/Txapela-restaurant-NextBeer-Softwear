@@ -7,12 +7,14 @@ function MenuPage(parentElement) {
 }
 
 MenuPage.prototype.generate = async function() {
-    this.listCards[0] = new ListCard('Beers')
-    this.elements = `
-    <header>
-        <h1>There will be my menu</h1>
-    </header>`;
-    this.elements += await this.listCards[0].GenerateBeerCard();
+    this.loading = new Loading(this.parentElement)
+    this.loading.generate();
+    this.listCards[0] = new ListCard('Beers');
+    this.listCards[1] = new ListCard('Tapas');
+    this.loading = new Loading(this.parentElement)
+    this.loading.generate();
+    this.elements = await this.listCards[0].GenerateBeerCard();
+    this.elements += this.listCards[1].GenerateTapasCard();
     this.render();
 }
 
