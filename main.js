@@ -4,6 +4,7 @@ function main() {
     var ENTRY_POINT = '/menu';
     var layout = null;
     var navbar = null;
+    var burguerMenu = null;
     var root = document.querySelector('#root');
     var links = [{ name: 'Menu', url: '/Menu' }, { name: 'Next Beer', url: '/nextbeer' }]
 
@@ -11,6 +12,7 @@ function main() {
     generateNavbar();
     addListenersToNavbar();
     activateRouter();
+    generateBurgerMenu();
 
     function generateLayout() {
         layout = new Layout(root);
@@ -36,6 +38,11 @@ function main() {
     function changePage(event) {
         var url = event.target.attributes.url.value;
         router.buildDom(url, layout.main);
+    }
+
+    function generateBurgerMenu() {
+        burguerMenu = new BurgerMenu(layout.burgerMenu, layout.main);
+        burguerMenu.generate();
     }
 
 }

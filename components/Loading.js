@@ -7,7 +7,7 @@ function Loading(parentElement) {
 
 Loading.prototype.generate = function() {
     var birra = [];
-    this.elements = `<h2>Wait for your Beer</h2><canvas></canvas>`;
+    this.elements = `<section class="canvas-site"><h2>Wait for your Beer</h2><canvas></canvas></section>`;
     birraUno = new Image();
     birraUno.src = `./images/Charge/1.png`;
     birraDos = new Image();
@@ -24,22 +24,23 @@ Loading.prototype.generate = function() {
     var canvas = document.querySelector('canvas');
     var ctx = canvas.getContext('2d');
     var i = 0;
+    var medioCanvas = canvas.width / 2 - ((canvas.height * 276 / 508 / 2));
     var loop = () => {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        if (i < 15) {
-            ctx.drawImage(birraUno, 0, 0, (canvas.height * 276 / 508), canvas.height);
-        } else if (i < 27) {
-            ctx.drawImage(birraDos, 0, 0, (canvas.height * 276 / 508), canvas.height);
-        } else if (i < 38) {
-            ctx.drawImage(birraTres, 0, 0, (canvas.height * 276 / 508), canvas.height);
-        } else if (i < 49) {
-            ctx.drawImage(birraCuatro, 0, 0, (canvas.height * 276 / 508), canvas.height);
+        if (i < 20) {
+            ctx.drawImage(birraUno, medioCanvas, 0, (canvas.height * 276 / 508), canvas.height);
+        } else if (i < 40) {
+            ctx.drawImage(birraDos, medioCanvas, 0, (canvas.height * 276 / 508), canvas.height);
         } else if (i < 60) {
-            ctx.drawImage(birraCinco, 0, 0, (canvas.height * 276 / 508), canvas.height);
+            ctx.drawImage(birraTres, medioCanvas, 0, (canvas.height * 276 / 508), canvas.height);
+        } else if (i < 80) {
+            ctx.drawImage(birraCuatro, medioCanvas, 0, (canvas.height * 276 / 508), canvas.height);
+        } else if (i < 100) {
+            ctx.drawImage(birraCinco, medioCanvas, 0, (canvas.height * 276 / 508), canvas.height);
         } else {
-            ctx.drawImage(birraSeis, 0, 0, (canvas.height * 276 / 508), canvas.height);
+            ctx.drawImage(birraSeis, medioCanvas, 0, (canvas.height * 276 / 508), canvas.height);
         }
-        if (i <= 70) {
+        if (i <= 120) {
             requestAnimationFrame(loop);
         }
         i++;

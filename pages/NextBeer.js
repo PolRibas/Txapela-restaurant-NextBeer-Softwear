@@ -15,7 +15,7 @@ NextBeerPage.prototype.generate = async function() {
     await this.connectToAPI();
     this.selectBeer = this.beers[random];
     this.elements = `
-    <header>
+    <section class="select-beer-container"><header>
         <h2>${this.selectBeer.name}</h2>
         <p>${this.selectBeer.description}</p>`;
     if (this.selectBeer.method.twist !== null) {
@@ -33,10 +33,27 @@ NextBeerPage.prototype.generate = async function() {
     <button>ORDER NOW</button></footer>
     <aside>
     <img src="${this.selectBeer.image_url}" alt="${this.selectBeer.name}">
-    </aside>`;
-    var button = document.querySelector('button');
-    document.addEventListener('click', this.buttonCheck)
+    </aside></section>`;
     this.render();
+    var button = document.querySelector('button');
+    var self = this;
+    button.addEventListener('click', () => {
+        this.buttonCheck(self, this.selectBeer.image_url, this.selectBeer.name);
+    });
+}
+
+NextBeerPage.prototype.buttonCheck = function(self, url, name) {
+    self.elements = `
+    <section class="wait-beer">
+        <h2>Wait for your beer</h2>
+        <div class="loader"> <img src="./images/bottleCharge.png" alt"mini logo"></div>
+        <img id="botella" src="${url}" alt="${name}">
+        </section>`;
+    self.parentElement.innerHTML = self.elements;
+    setTimeout(function() {
+        self.elements = null;
+        self.generate();
+    }, 20000);
 }
 
 NextBeerPage.prototype.render = function() {
@@ -45,8 +62,4 @@ NextBeerPage.prototype.render = function() {
 
 NextBeerPage.prototype.connectToAPI = async function() {
     this.beers = await PunkBeerServiceInstance.getAllBeers();
-}
-
-NextBeerPage.prototype.buttonCheck = function(parentElement) {
-    router.buildDom('/menu', parentElement);
 }

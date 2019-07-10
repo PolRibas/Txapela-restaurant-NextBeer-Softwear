@@ -1,0 +1,410 @@
+/* ---- reset ---- */
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+
+/* ---- typography ---- */
+
+body {
+    color: #111;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 147%;
+    background: whitesmoke;
+}
+
+h1 {
+    list-style-type: none;
+}
+
+h2 {
+    list-style-type: none;
+}
+
+h3 {
+    list-style-type: none;
+}
+
+p {
+    list-style-type: none;
+    margin: 0;
+}
+
+
+/* ---- layout ---- */
+
+.move {
+    transform: translateX(-340px);
+    transition: 1.8s;
+}
+
+#site-logo {
+    position: relative;
+    background: url('./images/maderita.svg') no-repeat center;
+    background-size: 100%;
+    margin-bottom: 0%;
+}
+
+#site-logo img {
+    width: 80%;
+    margin: 20% 10% 10% 10%;
+    position: relative;
+}
+
+#site-header {
+    color: white;
+    background: #111;
+    position: relative;
+    text-decoration: none;
+    margin: 0%;
+    z-index: 1;
+}
+
+nav ul {
+    display: grid;
+    grid-template-areas: "a a";
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    padding: 5% 0%;
+    text-align: center;
+    cursor: pointer;
+    margin: 0%;
+}
+
+.nav a {
+    color: whitesmoke;
+    font-size: 1.4em;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 0;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+.burger-img {
+    position: absolute;
+    top: 0;
+}
+
+.burger-img div {
+    width: 40px;
+    height: 8px;
+    margin-bottom: 3px;
+    background: #111;
+    position: relative;
+    top: 15px;
+    left: 15px;
+    border-radius: 20%;
+    cursor: pointer;
+}
+
+#site-burger-menu {
+    width: 100%;
+    position: absolute;
+    top: 0;
+}
+
+.burger-info {
+    position: fixed;
+    left: 0px;
+    z-index: 1;
+    width: 100%;
+    height: 100vh;
+    background: black;
+    display: grid;
+    margin: 0;
+    grid-template-columns: 1fr;
+    transition-duration: 2s;
+}
+
+@media (min-width: 470px) {
+    #site-burger-menu {
+        display: none;
+    }
+}
+
+.display-none {
+    position: fixed;
+    left: 470px;
+    height: 100vh;
+    transition-duration: 2s;
+}
+
+.burger-info img {
+    width: 80%;
+    margin: 40% 10% 5% 10%;
+    position: relative;
+}
+
+.burger-info ul {
+    margin: 10%;
+    padding: 20px;
+}
+
+.burger-info p {
+    color: white;
+    text-align: center;
+    margin-top: 0;
+}
+
+.burger-info li a {
+    margin-top: 10%;
+    width: 100%;
+    text-align: center;
+    color: whitesmoke;
+    font-size: 1.4em;
+    font-family: 'Montserrat', sans-serif;
+    justify-content: center;
+    display: block;
+}
+
+#site-main {
+    margin-bottom: 5px;
+}
+
+.list-card {
+    background: #111;
+    margin: 5%;
+    color: whitesmoke;
+    font-family: 'Montserrat', sans-serif;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "cabecera", "articulo";
+    border-radius: 10px;
+}
+
+.list-card ul {
+    grid-area: "articulo";
+    font-size: 0.7em;
+    display: grid;
+    grid-template-columns: 80% 1fr;
+}
+
+.list-card h3 {
+    grid-area: "cabecera";
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.regular-card {
+    background: #111;
+    margin: 5%;
+    color: whitesmoke;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 10px;
+    padding: 5%;
+}
+
+.regular-card img {
+    width: 80%;
+    margin: 10%;
+    border-radius: 10px;
+}
+
+.regular-card h3 {
+    font-size: 1.2em;
+    margin: 0% 10%;
+    text-align: center;
+}
+
+.regular-card p {
+    font-size: 0.7em;
+    padding: 20px;
+}
+
+#site-footer {
+    color: white;
+    background: #111;
+    margin-top: 0;
+    padding: 10px;
+}
+
+#site-footer img {
+    width: 80%;
+    margin: 5% 10%;
+    border-radius: 10px;
+}
+
+#site-footer p {
+    margin: auto;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.container {
+    margin: 0 20px;
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 728px;
+        margin: 0 auto;
+    }
+}
+
+
+/* ---- components ---- */
+
+button {
+    width: 100%;
+    background-color: blue;
+    color: #fff;
+    border: 1px solid #fff;
+    z-index: 1;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.button-alt {
+    color: blue;
+    background-color: #fff;
+}
+
+nav,
+li,
+ul,
+a {
+    list-style-type: none;
+    text-decoration: none;
+}
+
+
+/* ---- section ---- */
+
+.canvas-site {
+    width: 80%;
+    margin: 10%;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.canvas-site canvas {
+    width: 100%;
+    margin: 0% 0%;
+}
+
+.select-beer-container {
+    background: #111;
+    margin: 5%;
+    color: whitesmoke;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.select-beer-container h2 {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.select-beer-container aside {
+    border-radius: 10px;
+}
+
+.select-beer-container img {
+    width: 40%;
+    margin: 5% 30%;
+    transition: ease-in;
+    border-image-outset: 2%;
+    display: none;
+}
+
+.select-beer-container select {
+    background: whitesmoke;
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8em;
+    padding: 5px;
+    width: 80%;
+    margin: 2% 10%;
+}
+
+.select-beer-container button {
+    background: black;
+    border-block-end: 2px solid #fff;
+    color: white;
+    padding: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    margin-top: 5%;
+}
+
+.wait-beer {
+    width: 80%;
+    margin: 10%;
+    background: black;
+    border-radius: 10px;
+    padding: 10px;
+    transition: ease-in;
+}
+
+#botella {
+    width: 30%;
+    margin: 5% 35%;
+    display: none;
+}
+
+.wait-beer h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3em;
+    color: whitesmoke;
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+}
+
+.loader {
+    border: 5px solid;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border-color: transparent transparent transparent;
+    margin: 8% auto 8% auto;
+    animation: spin 4s linear infinite;
+}
+
+.wait-beer img {
+    height: 120px;
+    z-index: 1;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+        filter: hue-rotate(360deg);
+    }
+}
+
+@keyframes animation-template {
+    0% {
+        background-image: linear-gradient(-10deg, white, black, whitesmoke);
+        opacity: 0.8;
+    }
+    100% {
+        background-image: linear-gradient(-10deg, whitesmoke, white, black);
+        opacity: 0.7;
+    }
+}
