@@ -175,6 +175,8 @@ a:hover {
 
 #site-main {
     margin-bottom: 5px;
+    display: flex;
+    flex-direction: column-reverse;
 }
 
 .list-card {
@@ -184,19 +186,16 @@ a:hover {
     font-family: 'Montserrat', sans-serif;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-areas: "cabecera", "articulo";
     border-radius: 10px;
 }
 
 .list-card ul {
-    grid-area: "articulo";
     font-size: 0.7em;
     display: grid;
     grid-template-columns: 80% 1fr;
 }
 
 .list-card h3 {
-    grid-area: "cabecera";
     font-size: 1.2em;
     text-align: center;
 }
@@ -226,6 +225,8 @@ a:hover {
     font-size: 0.7em;
     padding: 20px;
 }
+
+
 
 #site-footer {
     color: white;
@@ -408,3 +409,94 @@ a {
         opacity: 0.7;
     }
 }
+
+
+@media (min-width: 767px) {
+    .grid-container {
+        margin-bottom: 1%;
+        display: flex;
+        flex-flow: column-reverse wrap;
+        justify-content: stretch;
+        align-items: flex-start;
+    }
+
+    .list-card, .regular-card {
+      width: 46%;
+      border-radius: 5px;
+      margin: 2%;
+      padding: 2%;
+      
+    }
+    ul {
+        margin: 0%;
+    }
+
+    .canvas-site {
+        margin: 30%;
+        width: 40%;
+    }
+
+    .list-card h3 {
+        font-size: 1.8em;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+}
+
+
+/*
+
+#site-main {
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.list-card {
+    background: #111;
+    margin: 5%;
+    color: whitesmoke;
+    font-family: 'Montserrat', sans-serif;
+    display: grid;
+    grid-template-columns: 1fr;
+    border-radius: 10px;
+}
+
+.list-card ul {
+    font-size: 0.7em;
+    display: grid;
+    grid-template-columns: 80% 1fr;
+}
+
+.list-card h3 {
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.regular-card {
+    background: #111;
+    margin: 5%;
+    color: whitesmoke;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 10px;
+    padding: 5%;
+}
+
+.regular-card img {
+    width: 80%;
+    margin: 10%;
+    border-radius: 10px;
+}
+
+.regular-card h3 {
+    font-size: 1.2em;
+    margin: 0% 10%;
+    text-align: center;
+}
+
+.regular-card p {
+    font-size: 0.7em;
+    padding: 20px;
+}
+
+*/

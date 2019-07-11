@@ -28,5 +28,5 @@ MenuPage.prototype.generate = async function() {
 }
 
 MenuPage.prototype.render = function() {
-    this.parentElement.innerHTML = this.elements;
+    this.parentElement.innerHTML = `<section class="grid-container">${this.elements}</section>`;
 }

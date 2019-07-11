@@ -72,3 +72,7 @@
         - getOneRandomBeer()
         - generate()
         - render()
+
+
+
+[link to page](https://polribas.github.io/Txapela-restaurant-NextBeer-Softwear/#0)
