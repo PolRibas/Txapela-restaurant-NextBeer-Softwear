@@ -74,6 +74,13 @@ p {
     z-index: 1;
 }
 
+@media (min-width: 767px) {
+    #site-logo img{
+        width: 50%;
+        margin: 10% 25% 5% 25%;
+    }
+}
+
 nav ul {
     display: grid;
     grid-template-areas: "a a";
@@ -321,11 +328,7 @@ a {
     font-family: 'Montserrat', sans-serif;
 }
 
-.select-beer-container aside {
-    border-radius: 10px;
-}
-
-.select-beer-container img {
+aside img {
     width: 40%;
     margin: 5% 30%;
     transition: ease-in;
@@ -334,13 +337,20 @@ a {
 }
 
 .select-beer-container select {
-    background: whitesmoke;
+    overflow: hidden;
+    background: #fff url("flecha-abajo.gif") no-repeat 90% center;
     color: black;
     font-family: 'Montserrat', sans-serif;
     font-size: 0.8em;
     padding: 5px;
     width: 80%;
     margin: 2% 10%;
+}
+
+
+.select-beer-container select:focus{
+   outline: none;
+   width: 80%;
 }
 
 .select-beer-container button {
@@ -351,6 +361,60 @@ a {
     font-family: 'Montserrat', sans-serif;
     font-size: 1em;
     margin-top: 5%;
+}
+
+@media (min-width: 767px) {
+
+    .flex-box{
+        display: flex;
+        flex-flow: row-reverse;
+        align-items: flex-start;
+        margin-bottom: 5%;
+    }
+
+    aside img {
+        transition: ease-in;
+        display: inline-block;
+        height: fit-content;
+    }
+
+    aside {
+        padding: 2%;
+        width: 45%;
+        float: left;
+        margin-top: 4%;
+        position: relative;
+    }
+
+    .select-beer-container{
+        padding: 5%;
+        width: 48%;
+        margin: 5% 5% 0% 0%;
+        float: left;
+        position: relative;
+    }
+
+    #site-footer{
+        display: flex;
+        align-items: center;
+    }
+
+    #site-footer img {
+        width: 100%;
+    }
+    #site-footer a {
+        margin: 0;
+        width: 40%;
+    }
+
+    #site-footer a:hover {
+        opacity: 1;
+    }
+
+    #site-footer img:hover {
+        width: 120%;
+        transition-duration: 2s;
+    }
 }
 
 .wait-beer {
@@ -410,6 +474,11 @@ a {
     }
 }
 
+.grid-container {
+    display: flex;
+    flex-flow: column-reverse;
+}
+
 
 @media (min-width: 767px) {
     .grid-container {
@@ -442,6 +511,11 @@ a {
     .list-card h3, .regular-card h3 {
         font-size: 1.8em;
         font-family: 'Montserrat', sans-serif;
+    }
+
+    .list-card ul {
+        font-size: 0.9em;
+        grid-template-columns: 85% 1fr;
     }
 
 }

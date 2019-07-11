@@ -15,7 +15,7 @@ NextBeerPage.prototype.generate = async function() {
     await this.connectToAPI();
     this.selectBeer = this.beers[random];
     this.elements = `
-    <section class="select-beer-container"><header>
+    <section class="flex-box"><section class="select-beer-container"><header>
         <h2>${this.selectBeer.name}</h2>
         <p>${this.selectBeer.description}</p>`;
     if (this.selectBeer.method.twist !== null) {
@@ -31,6 +31,7 @@ NextBeerPage.prototype.generate = async function() {
     <option>${this.selectBeer.food_pairing[1]}</option>
     <option>${this.selectBeer.food_pairing[2]}</option></select>
     <button>ORDER NOW</button></footer>
+    </section>
     <aside>
     <img src="${this.selectBeer.image_url}" alt="${this.selectBeer.name}">
     </aside></section>`;

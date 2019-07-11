@@ -35,10 +35,10 @@ BurgerMenu.prototype.changePage = function(selfAnchor) {
     var logo = document.querySelector('#site-logo');
     var info = document.querySelector('.burger-info');
     info.classList.add("display-none");
-    main.classList.remove("move");
-    header.classList.remove("move");
-    footer.classList.remove("move");
-    logo.classList.remove("move");
+    // main.classList.remove("move");
+    // header.classList.remove("move");
+    // footer.classList.remove("move");
+    // logo.classList.remove("move");
     selfAnchor.elements = null;
     var url = event.target.attributes.url.value;
     router.buildDom(url, selfAnchor.siteMenu);
@@ -50,12 +50,12 @@ BurgerMenu.prototype.toggleBM = function(self) {
     var footer = document.querySelector('#site-footer');
     var logo = document.querySelector('#site-logo');
     var info = document.querySelector('.burger-info');
-    setTimeout(() => {
-        main.classList.add("move");
-        header.classList.add("move");
-        footer.classList.add("move");
-        logo.classList.add("move");
-    }, 245);
+    // setTimeout(() => {
+    //     main.classList.add("move");
+    //     header.classList.add("move");
+    //     footer.classList.add("move");
+    //     logo.classList.add("move");
+    // }, 245);
     info.classList.remove("display-none");
     var anchors = document.querySelectorAll('a');
     var selfAnchor = self;

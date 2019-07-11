@@ -17,7 +17,8 @@ Layout.prototype.generate = function() {
     <section id='site-burger-menu'></section>
     <main id="site-main"></main>
     <footer id="site-footer">
-    <img src="./images/maps.png" alt="Logo Restaurant">
+    <a href="https://www.google.com/maps/place/Carrer+de+Pau+Claris,+145,+08009+Barcelona/@41.3938647,2.1631168,17z/data=!3m1!4b1!4m5!3m4!1s0x12a4a2ecda548de7:0x265d32a60b41efb2!8m2!3d41.3938647!4d2.1653055">
+    <img src="./images/maps.png" alt="Logo Restaurant"></a>
     <p><small>© 2019 GRIZZLY for Mozcorra Txapela</small></p>
     </footer>`;
     this.render();
