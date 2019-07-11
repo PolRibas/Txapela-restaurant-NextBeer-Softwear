@@ -416,19 +416,22 @@ a {
         margin-bottom: 1%;
         display: flex;
         flex-flow: column-reverse wrap;
-        justify-content: stretch;
-        align-items: flex-start;
+        justify-content: flex-end;
+        align-items: flex-end;
+        height: 1680px;
     }
 
     .list-card, .regular-card {
       width: 46%;
       border-radius: 5px;
       margin: 2%;
-      padding: 2%;
+      padding: 3%;
       
     }
     ul {
         margin: 0%;
+        list-style-type: none;
+        padding: 0;
     }
 
     .canvas-site {
@@ -436,7 +439,7 @@ a {
         width: 40%;
     }
 
-    .list-card h3 {
+    .list-card h3, .regular-card h3 {
         font-size: 1.8em;
         font-family: 'Montserrat', sans-serif;
     }
