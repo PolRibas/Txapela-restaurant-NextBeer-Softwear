@@ -338,7 +338,6 @@ aside img {
 
 .select-beer-container select {
     overflow: hidden;
-    background: #fff url("flecha-abajo.gif") no-repeat 90% center;
     color: black;
     font-family: 'Montserrat', sans-serif;
     font-size: 0.8em;
