@@ -339,6 +339,7 @@ aside img {
 .select-beer-container select {
     overflow: hidden;
     font-family: 'Montserrat', sans-serif;
+    background: #fff;
     font-size: 0.8em;
     padding: 5px;
     width: 80%;
@@ -515,6 +516,10 @@ aside img {
         grid-template-columns: 85% 1fr;
     }
 
+}
+
+.outOfPage{
+    display: none;
 }
 
 
