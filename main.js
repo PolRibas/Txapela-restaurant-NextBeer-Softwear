@@ -55,7 +55,7 @@ function main() {
         <section class="start-layout">
             <header>
                 <h1>The official afterworks of the drunken</h1>
-                <h2>Ironhackers</h2>
+                <h2></h2>
                 <img src="./images/iron-logo.png" alt="Ironhack Logo">
             </header>
                 <button>I'm conected</button>
@@ -88,26 +88,35 @@ function main() {
 
     function manipulateText(){
         var text = document.querySelector('h2');
-        var arrayWords = ['WEB/DEV programmers', 'UX/UI designer', 'data analysts', 'digital creators', 'web developers',
-                        'WEB/DEV programmers', 'UX/UI designer', 'data analysts', 'digital creators', 'web developers',
-                        'WEB/DEV programmers', 'UX/UI designer', 'data analysts', 'digital creators', 'web developers',
-                        'WEB/DEV programmers', 'UX/UI designer', 'data analysts', 'digital creators', 'web developers',
-                        'Ironhackers'];
-        var spacedWords = arrayWords.map((word) => word.split(''))
-  
-        spacedWords.forEach((word, wordIndex)=>{
-           var wordTime = word.length + 10;
-            setTimeout(()=> {
-                var newText = "";
-                for(let i = 0; i < word.length; i++){
-                    setTimeout(() => {
-                        newText += word[i];
-                        text.innerHTML = newText;
-                    }, 100*i);
-                } 
-            }, 100 * wordTime * (wordIndex + 0.2) * 2)  
-        
-        })            
+        var string = 'WEB/DEV programmers$ UX/UI designer$ data analysts$ digital creators$ web developers$ Ironhackers€';
+        var newText = '';
+        var contador = 0;
+        var i = -1;
+        setInterval(() => { 
+        i++;
+            if(string[i] === '$'){
+                newText = '';
+                contador++;
+                if(contador < 20){
+                    i--;
+                }else{
+                    contador = 0;
+                    i++;
+                }
+            } else if(string[i] === '€'){ 
+                newText = '';
+                if(contador < 20){
+                    contador++;
+                    i--;
+                }else{
+                    contador = 0;
+                    i = -1;
+                }
+            }else{
+                newText += string[i];
+                text.innerHTML = newText;
+            }
+        },100)           
     }
 
 }
