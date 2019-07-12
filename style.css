@@ -531,6 +531,7 @@ aside img {
     margin: 0;
     position: absolute;
     padding: 5%;
+    z-index: 2;
 }
 
 .start-layout h1{
