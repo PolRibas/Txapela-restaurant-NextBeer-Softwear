@@ -69,8 +69,10 @@ function main() {
         var button = document.querySelector('button');
         button.addEventListener('click', () => {
             startLayout.classList.add('outOfPage');
-            elements = "";
-            renderStartLayout(body,elements);
+            setTimeout(() => {
+                elements = "";
+                renderStartLayout(body,elements);
+            }, 4000);
             goInsideWeb();
         })
     }

@@ -519,7 +519,52 @@ aside img {
 }
 
 .outOfPage{
-    display: none;
+    transform: translateY(-1240px);
+    transition: 6s;
+    z-index: 2;
+}
+
+.start-layout {
+    width: 100%;
+    height: 100vh;
+    background: black;
+    margin: 0;
+    position: absolute;
+    padding: 5%;
+}
+
+.start-layout h1{
+    padding: 5%;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    line-height: 157%;
+}
+
+.start-layout header img {
+    width: 30%;
+    margin: 2% 35%;
+}
+
+.start-layout footer img {
+    width: 70%;
+    margin: 2% 15%;
+}
+
+.start-layout footer p {
+    color: white;
+    text-align: center;
+}
+
+.start-layout button {
+    background: black;
+    border-block-end: 2px solid #fff;
+    color: white;
+    padding: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    width: 90%;
+    margin: 20% 5%;
 }
 
 
