@@ -338,7 +338,6 @@ aside img {
 
 .select-beer-container select {
     overflow: hidden;
-    color: black;
     font-family: 'Montserrat', sans-serif;
     font-size: 0.8em;
     padding: 5px;
@@ -353,7 +352,7 @@ aside img {
 }
 
 .select-beer-container button {
-    background: whitesmoke
+    background: black;
     border-block-end: 2px solid #fff;
     color: white;
     padding: 5px;
