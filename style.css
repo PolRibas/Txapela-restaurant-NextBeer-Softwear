@@ -353,7 +353,7 @@ aside img {
 }
 
 .select-beer-container button {
-    background: black;
+    background: whitesmoke
     border-block-end: 2px solid #fff;
     color: white;
     padding: 5px;
@@ -374,7 +374,6 @@ aside img {
     aside img {
         transition: ease-in;
         display: inline-block;
-        height: fit-content;
     }
 
     aside {
