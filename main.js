@@ -54,7 +54,8 @@ function main() {
         var elements = `
         <section class="start-layout">
             <header>
-                <h1>The official afterworks of the drunken WEB/DEV programmers</h1>
+                <h1>The official afterworks of the drunken</h1>
+                <h2>Ironhackers</h2>
                 <img src="./images/iron-logo.png" alt="Ironhack Logo">
             </header>
                 <button>I'm conected</button>
@@ -64,7 +65,10 @@ function main() {
             </footer>
         </section>
         `;
+
         renderStartLayout(body, elements)
+            manipulateText();
+
         var startLayout = document.querySelector('.start-layout');
         var button = document.querySelector('button');
         button.addEventListener('click', () => {
@@ -80,6 +84,30 @@ function main() {
 
     function renderStartLayout(body,elements){
         body.innerHTML = elements;
+    }
+
+    function manipulateText(){
+        var text = document.querySelector('h2');
+        var arrayWords = ['WEB/DEV programmers', 'UX/UI designer', 'data analysts', 'digital creators', 'web developers',
+                        'WEB/DEV programmers', 'UX/UI designer', 'data analysts', 'digital creators', 'web developers',
+                        'WEB/DEV programmers', 'UX/UI designer', 'data analysts', 'digital creators', 'web developers',
+                        'WEB/DEV programmers', 'UX/UI designer', 'data analysts', 'digital creators', 'web developers',
+                        'Ironhackers'];
+        var spacedWords = arrayWords.map((word) => word.split(''))
+  
+        spacedWords.forEach((word, wordIndex)=>{
+           var wordTime = word.length + 10;
+            setTimeout(()=> {
+                var newText = "";
+                for(let i = 0; i < word.length; i++){
+                    setTimeout(() => {
+                        newText += word[i];
+                        text.innerHTML = newText;
+                    }, 100*i);
+                } 
+            }, 100 * wordTime * (wordIndex + 0.2) * 2)  
+        
+        })            
     }
 
 }
